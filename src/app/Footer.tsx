@@ -4,11 +4,10 @@ export default function Footer() {
     <footer style={{
       backgroundColor: '#1a202c',
       color: '#fff',
-      padding: '1rem 2rem',
       textAlign: 'center',
-      marginTop: '2rem'
+      padding: '1rem',
     }}>
-      &copy; {new Date().getFullYear()} LawBandit RAG. All rights reserved.
+      <p>© 2025 LawBandit. All rights reserved.</p>
     </footer>
   );
 }
