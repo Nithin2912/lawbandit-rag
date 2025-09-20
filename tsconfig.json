@@ -11,14 +11,27 @@
     "skipLibCheck": true,
     "isolatedModules": true,
     "incremental": true,
-    "lib": [ "dom", "dom.iterable", "esnext" ],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "noEmit": false, // ✅ allow emitting JS
     "outDir": "dist" // ✅ output compiled JS to dist
+    ,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.tsx"
+    "src/**/*.tsx",
+    ".next/types/**/*.ts"
   ],
-  "exclude": [ "node_modules" ]
+  "exclude": [
+    "node_modules"
+  ]
 }
