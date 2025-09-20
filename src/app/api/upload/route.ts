@@ -4,8 +4,9 @@ import pdfParse from "pdf-parse";
 
 export async function POST(req: NextRequest) {
   try {
-    // Ensure the request has a body
+    // Read raw request body as ArrayBuffer
     const arrayBuffer = await req.arrayBuffer();
+
     if (!arrayBuffer || arrayBuffer.byteLength === 0) {
       return NextResponse.json(
         { error: "No file uploaded or empty file" },
@@ -24,9 +25,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ text });
   } catch (err) {
     console.error("PDF parse error:", err);
-    return NextResponse.json(
-      { error: "Failed to parse PDF" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to parse PDF" }, { status: 500 });
   }
 }
