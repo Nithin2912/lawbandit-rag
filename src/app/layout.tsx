@@ -1,3 +1,4 @@
+// src/app/RootLayout.tsx
 import './globals.css';
 import { ReactNode } from 'react';
 import Header from './Header';
@@ -15,9 +16,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </head>
-      <body>
+      <body className="page-container">
         <Header />
-        <main>{children}</main>
+        <main className="content">{children}</main>
         <Footer />
       </body>
     </html>

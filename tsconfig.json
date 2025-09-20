@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "es2020",
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "jsx": "preserve",
     "strict": true,
     "esModuleInterop": true,
@@ -10,27 +10,15 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "isolatedModules": true,
-    "noEmit": true,
     "incremental": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "allowJs": true
+    "lib": [ "dom", "dom.iterable", "esnext" ],
+    "allowJs": true,
+    "noEmit": false, // ✅ allow emitting JS
+    "outDir": "dist" // ✅ output compiled JS to dist
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "next-env.d.ts",
-    ".next/types/**/*.ts"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": [ "node_modules" ]
 }
